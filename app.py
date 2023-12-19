@@ -30,4 +30,4 @@ def home():
     print("Voici")
     print(totalSix)
     #pdb.set_trace()
-    return render_template("index.html",totalSix=totalSix,topSix=arrayFinal,total=myTotal,notReturned=totalNotReturned,returned=totalReturned)
+    return render_template("index.html",labelAreaNotRestored=statAnnualObjectsNotRestoreOrderByMonth(),labelArea=statAnnualObjectsFoundOrderByMonth(),totalSix=totalSix,topSix=arrayFinal,total=myTotal,notReturned=totalNotReturned,returned=totalReturned)
