@@ -124,7 +124,7 @@
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown no-arrow">
+            <!--li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
@@ -143,8 +143,8 @@
                   </div>
                 </form>
               </div>
-            </li>
-            <li class="nav-item dropdown no-arrow mx-1">
+            </li-->
+            <!--li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
@@ -190,8 +190,8 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
-            </li>
-            <li class="nav-item dropdown no-arrow mx-1">
+            </li-->
+            <!--li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
@@ -300,7 +300,7 @@
                   Logout
                 </a>
               </div>
-            </li>
+            </li-->
           </ul>
         </nav>
         <!-- Topbar -->
@@ -316,6 +316,92 @@
           </div>
 
           <div class="row mb-3">
+            <!--div class="col-lg-12">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Form Basic</h6>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your
+                        email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                        <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div-->
+              <div class="col-xl-12 col-md-6 mb-4">
+              <div class="card h-100">
+
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <!--div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Objets retrouvés</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{total}}</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                        <span>Since last month</span>
+                      </div>
+                    </div-->
+                    
+                    <div class="col-md-5">
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Région</label>
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            {% for region in regions %}
+                              <option>{{region}}</option>
+                            {% endfor %}
+                          </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-5">
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Année</label>
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            {% for year in years %}
+                              <option>{{year}}</option>
+                            {% endfor %}
+                          </select>
+                      </div>
+                    </div>
+
+                     <div class="col-md-2" style="margin-bottom: -26px ">
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Rechercher</button>
+                      </div>
+                    </div>
+                    <!--div class="col-auto">
+                      <i class="fas fa-list fa-2x text-primary"></i>
+                    </div-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-4 col-md-6 mb-4">
               <div class="card h-100">
@@ -401,7 +487,7 @@
             <div class="col-xl-8 col-lg-7">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Statistiques annuelle</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Statistiques annuelles</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false">
@@ -464,7 +550,7 @@
               </div>
             </div>
             <!-- Invoice Example -->
-            <div class="col-xl-8 col-lg-7 mb-4">
+            <!--div class="col-xl-8 col-lg-7 mb-4">
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Invoice</h6>
@@ -523,9 +609,9 @@
                 </div>
                 <div class="card-footer"></div>
               </div>
-            </div>
+            </div-->
             <!-- Message From Customer-->
-            <div class="col-xl-4 col-lg-5 ">
+            <!--div class="col-xl-4 col-lg-5 ">
               <div class="card">
                 <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-light">Message From Customer</h6>
@@ -566,7 +652,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div-->
           </div>
           <!--Row-->
 
@@ -595,7 +681,7 @@
                 </div>
                 <div class="card-body">
                   <div class="chart-bar">
-                    <canvas id="myBarChart"></canvas>
+                    <canvas id="mySecondChart"></canvas>
                   </div>
                   <hr>
                   Styling for the bar chart can be found in the <code>/js/demo/chart-bar-demo.js</code> file.
@@ -687,6 +773,57 @@
   <script src="/static/js/demo/chart-pie-demo.js"></script>  
   <script src="/static/js/demo/chart-bar-demo.js"></script>
   <script type="text/javascript">
+
+  $(document).ready(function(){
+    alert("Ok");
+    loadPieChartObjectFoundByType();
+
+    function loadPieChartObjectFoundByType()
+    {
+      alert("C'est bon");
+      // Set new default font family and font color to mimic Bootstrap's default styling
+      Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+      Chart.defaults.global.defaultFontColor = '#858796';
+      // Pie Chart Example
+      var ctx = document.getElementById("mySecondChart");
+
+      var myPieChart = new Chart(ctx, {
+        type: 'doughnut',
+          data: {
+            //labels: ["Direct", "Referral", "Social"],
+            labels:{{types|safe}},
+            datasets: [{
+            //data: [55, 30, 15],
+            data:{{values|safe}},
+            backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc','yellow'],
+            //hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf','#17a673'],
+            hoverBackgroundColor:{{col|safe}},
+            hoverBorderColor: "rgba(234, 236, 244, 1)",
+          }],
+        },
+  options: {
+    //showDatasetLabels : true,
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: true
+    },
+    cutoutPercentage: 80,
+  },
+});
+
+    }
+  });
+
 // Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';

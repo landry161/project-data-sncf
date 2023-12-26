@@ -3,6 +3,7 @@ from flask import Flask
 from flask import Flask, render_template,request,redirect
 from datetime import datetime
 import pandas as pd
+import json
 from db import *
 
 app = Flask(__name__)
@@ -16,6 +17,12 @@ def home():
     arrayFinal=[]
     totalSix=0
     myTotal=countElement()
+    typesObjs=[]
+    totals=[]
+    myColors=[]
+
+    arrayObjs=selectStatObjectsFoundByType()
+    
     totalNotReturned=countObjectsNotReturned()
     totalReturned=countObjectsReturned()
     statSixByYear=statObjectFoundByYear()
@@ -28,6 +35,12 @@ def home():
         totalSix+=statSixByYear[index][1]
         arrayFinal.append(keysValue)
     print("Voici")
-    print(totalSix)
-    #pdb.set_trace()
-    return render_template("index.html",labelAreaNotRestored=statAnnualObjectsNotRestoreOrderByMonth(),labelArea=statAnnualObjectsFoundOrderByMonth(),totalSix=totalSix,topSix=arrayFinal,total=myTotal,notReturned=totalNotReturned,returned=totalReturned)
+
+    for i in range(0,len(arrayObjs)):
+        typesObjs.append(arrayObjs[i]["type_objets"])
+        totals.append(arrayObjs[i]["value"])
+        myColors.append(arrayObjs[i]['color'])
+
+    #print(totalSix)
+    
+    return render_template("index.html",col=myColors,values=totals,types=typesObjs,years=selectDistinctYear(),regions=selectDistinctRegions(),labelAreaNotRestored=statAnnualObjectsNotRestoreOrderByMonth(),labelArea=statAnnualObjectsFoundOrderByMonth(),totalSix=totalSix,topSix=arrayFinal,total=myTotal,notReturned=totalNotReturned,returned=totalReturned)
