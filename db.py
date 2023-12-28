@@ -83,23 +83,33 @@ def selectStatObjectsFoundByType():
     query=conn.cursor()
     query.execute("SELECT COUNT(type_objets) as total, type_objets FROM sncf GROUP BY type_objets ORDER BY COUNT(type_objets) DESC;")
     result=query.fetchall()
+    
     for index in range(0,len(result)):
         value={
             'type_objets':result[index][1],
             'value':result[index][0],
             'color':colors[0][index]
         }
-        #print(index)
-        #print(colors[0][index])
         stats.append(value)
-    #pdb.set_trace()
     return stats
 
-def selectObjectsByRegion():
-    print("Ok")
+def selectStatObjectsFoundedByYear():
+    pieCharts=[]
+    conn=psycopg2.connect("dbname=projet-sncf user=postgres host=localhost password=1234")
+    query=conn.cursor()
+    query.execute("SELECT EXTRACT(YEAR FROM date::date) as annee, count(*) as total FROM sncf GROUP BY EXTRACT(YEAR FROM date::date);")
+    res=query.fetchall()
+
+    for i in range(0,len(res)):
+        pieCharts.append({'name':res[i][0],'y':res[i][1]})
+    print(pieCharts)
+    return pieCharts
 
 #Total des objets restitués
-def countObjectsReturned_():
-    print("Objets returned")
+def selectTopFiveObjectsFoundForCurrentYear():
+    currentResults=[]
+    conn=psycopg2.connect("")
+    query=conn.cursor()
+    query.execute("SELECT nature_objets, count(nature_objets) FROM sncf WHERE EXTRACT(YEAR FROM date::date)=2023 group by nature_objets order by count(nature_objets) DESC LIMIT 5; ")
 
 selectStatObjectsFoundByType()

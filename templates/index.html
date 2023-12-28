@@ -12,6 +12,7 @@
   <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/static/css/ruang-admin.min.css" rel="stylesheet">
+  <link href="/static/css/highcharts.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -484,7 +485,37 @@
             </div-->
 
             <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
+            <div class="col-xl-12 col-lg-7">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Statistiques annuelles objets perdus / restitués (2023)</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area" style="height: 31rem;">
+                    <figure class="highcharts-figure">
+                      <div id="lineChartSymbols"></div>
+                    </figure>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-7">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Statistiques annuelles</h6>
@@ -504,155 +535,30 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
+                  <div class="chart-area" style="height: 28rem;">
+                    <figure class="highcharts-figure">
+    <div id="container"></div>
+</figure>
                   </div>
                 </div>
               </div>
             </div>
+
             <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-6 col-lg-5">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Top cinq objets retrouvés</h6>
                   <div class="dropdown no-arrow">
-                    <!--a class="dropdown-toggle btn btn-primary btn-sm" href="#" role="button" id="dropdownMenuLink"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Month <i class="fas fa-chevron-down"></i>
-                    </a-->
-                    <!--div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                      aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Select Periode</div>
-                      <a class="dropdown-item" href="#">Today</a>
-                      <a class="dropdown-item" href="#">Week</a>
-                      <a class="dropdown-item active" href="#">Month</a>
-                      <a class="dropdown-item" href="#">This Year</a>
-                    </div-->
                   </div>
                 </div>
                 <div class="card-body">
-                  {% for top in topSix %}
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Année {{top.year}}
-                      <div class="small float-right"><b>{{top.value}} Objets retrouvés</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar {{top.color}}" role="progressbar" style="width: {{'%0.2f'| format((top.value*100)/totalSix|float)}}%" aria-valuenow="{{'%0.2f'| format((top.value*100)/totalSix|float)}}"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  {% endfor%}
+                  <figure class="highcharts-figure">
+    <div id="pieChartHome"></div>
+</figure>
                 </div>
-                <!--div class="card-footer text-center">
-                  <a class="m-0 small text-primary card-link" href="#">View More <i
-                      class="fas fa-chevron-right"></i></a>
-                </div-->
               </div>
             </div>
-            <!-- Invoice Example -->
-            <!--div class="col-xl-8 col-lg-7 mb-4">
-              <div class="card">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Invoice</h6>
-                  <a class="m-0 float-right btn btn-danger btn-sm" href="#">View More <i
-                      class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Item</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA5324</a></td>
-                        <td>Jaenab Bajigur</td>
-                        <td>Gundam 90' Edition</td>
-                        <td><span class="badge badge-warning">Shipping</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA8568</a></td>
-                        <td>Rivat Mahesa</td>
-                        <td>Oblong T-Shirt</td>
-                        <td><span class="badge badge-danger">Pending</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1453</a></td>
-                        <td>Indri Junanda</td>
-                        <td>Hat Rounded</td>
-                        <td><span class="badge badge-info">Processing</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1998</a></td>
-                        <td>Udin Cilok</td>
-                        <td>Baby Powder</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="card-footer"></div>
-              </div>
-            </div-->
-            <!-- Message From Customer-->
-            <!--div class="col-xl-4 col-lg-5 ">
-              <div class="card">
-                <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-light">Message From Customer</h6>
-                </div>
-                <div>
-                  <div class="customer-message align-items-center">
-                    <a class="font-weight-bold" href="#">
-                      <div class="text-truncate message-title">Hi there! I am wondering if you can help me with a
-                        problem I've been having.</div>
-                      <div class="small text-gray-500 message-time font-weight-bold">Udin Cilok · 58m</div>
-                    </a>
-                  </div>
-                  <div class="customer-message align-items-center">
-                    <a href="#">
-                      <div class="text-truncate message-title">But I must explain to you how all this mistaken idea
-                      </div>
-                      <div class="small text-gray-500 message-time">Nana Haminah · 58m</div>
-                    </a>
-                  </div>
-                  <div class="customer-message align-items-center">
-                    <a class="font-weight-bold" href="#">
-                      <div class="text-truncate message-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </div>
-                      <div class="small text-gray-500 message-time font-weight-bold">Jajang Cincau · 25m</div>
-                    </a>
-                  </div>
-                  <div class="customer-message align-items-center">
-                    <a class="font-weight-bold" href="#">
-                      <div class="text-truncate message-title">At vero eos et accusamus et iusto odio dignissimos
-                        ducimus qui blanditiis
-                      </div>
-                      <div class="small text-gray-500 message-time font-weight-bold">Udin Wayang · 54m</div>
-                    </a>
-                  </div>
-                  <div class="card-footer text-center">
-                    <a class="m-0 small text-primary card-link" href="#">View More <i
-                        class="fas fa-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div-->
           </div>
           <!--Row-->
 
@@ -680,8 +586,16 @@
                   <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
                 </div>
                 <div class="card-body">
-                  <div class="chart-bar">
-                    <canvas id="mySecondChart"></canvas>
+                  <div class="chart-bar" style="height: 30rem">
+                    <figure class="highcharts-figure">
+    <div id="bubbleChart"></div>
+    <p class="highcharts-description">
+        Chart showing basic use of bubble series with a custom tooltip formatter.
+        The chart uses plot lines to show safe intake levels for sugar and fat.
+        Bubble charts are great for comparing three dimensions of data without
+        relying on color or 3D charts.
+    </p>
+</figure>
                   </div>
                   <hr>
                   Styling for the bar chart can be found in the <code>/js/demo/chart-bar-demo.js</code> file.
@@ -704,14 +618,12 @@
               </div>
             </div>
           </div>
-
           <!--div class="row">
             <div class="col-lg-12 text-center">
               <p>Do you like this template ? you can download from <a href="https://github.com/indrijunanda/RuangAdmin"
                   class="btn btn-primary btn-sm" target="_blank"><i class="fab fa-fw fa-github"></i>&nbsp;GitHub</a></p>
             </div>
           </div-->
-
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">
@@ -767,6 +679,15 @@
   <script src="/static/vendor/jquery/jquery.min.js"></script>
   <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+
   <script src="/static/js/ruang-admin.min.js"></script>
   <script src="/static/vendor/chart.js/Chart.min.js"></script>
   <!--script src="/static/js/demo/chart-area-demo.js"></script--> 
@@ -774,13 +695,12 @@
   <script src="/static/js/demo/chart-bar-demo.js"></script>
   <script type="text/javascript">
 
-  $(document).ready(function(){
-    alert("Ok");
+  $(document).ready(function()
+  {
     loadPieChartObjectFoundByType();
 
     function loadPieChartObjectFoundByType()
     {
-      alert("C'est bon");
       // Set new default font family and font color to mimic Bootstrap's default styling
       Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
       Chart.defaults.global.defaultFontColor = '#858796';
@@ -795,8 +715,9 @@
             datasets: [{
             //data: [55, 30, 15],
             data:{{values|safe}},
-            backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc','yellow'],
+            //backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc','yellow'],
             //hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf','#17a673'],
+            backgroundColor:{{back|safe}},
             hoverBackgroundColor:{{col|safe}},
             hoverBorderColor: "rgba(234, 236, 244, 1)",
           }],
@@ -956,7 +877,293 @@ var myLineChart = new Chart(ctx, {
   }
 });
 
-  </script>
-</body>
+</script>
 
+ <script type="text/javascript">
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Corn vs wheat estimated production for 2020',
+        align: 'left'
+    },
+    subtitle: {
+        text:
+            'Source: <a target="_blank" ' +
+            'href="https://www.indexmundi.com/agriculture/?commodity=corn">indexmundi</a>',
+        align: 'left'
+    },
+    xAxis: {
+        categories: ['USA', 'China', 'Brazil', 'EU', 'India', 'Russia'],
+        crosshair: true,
+        accessibility: {
+            description: 'Countries'
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: '1000 metric tons (MT)'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' (1000 MT)'
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [
+        {
+            name: 'Corn',
+            data: [406292, 260000, 107000, 68300, 27500, 14500]
+        },
+        {
+            name: 'Wheat',
+            data: [51086, 136000, 5500, 141000, 107180, 77000]
+        }
+    ]
+});
+ </script>
+
+<script type="text/javascript">
+  Highcharts.chart('pieChartHome', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Proportion Objets trouvés entre 2013 et 2023'
+    },
+    tooltip: {
+        valueSuffix: ''
+    },
+    subtitle: {
+        text:
+        'Source:<a href="https://ressources.data.sncf.com/explore/dataset/objets-trouves-restitution/table/?sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJjb2xvciI6InJhbmdlLWN1c3RvbSIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlfV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIiwic2VyaWVzQnJlYWtkb3duIjoiZ2Nfb2JvX3R5cGVfYyIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6Im1vbnRoIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoib2JqZXRzLXRyb3V2ZXMtcmVzdGl0dXRpb24iLCJvcHRpb25zIjp7InNvcnQiOiJkYXRlIn19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9" target="_default">SNCF</a>'
+    },
+    plotOptions: {
+        pie: {
+    showInLegend: true
+  },
+        series: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: [{
+                enabled: true,
+                distance: 20
+            }, {
+                enabled: true,
+                distance: -40,
+                //format: '{point.percentage:.2f}%',
+                format:'{point.percentage:.1f}',
+                style: {
+                    fontSize: '1.2em',
+                    textOutline: 'none',
+                    opacity: 0.7
+                }/*,
+                filter: {
+                    operator: '>',
+                    property: 'percentage',
+                    value: 10
+                }*/
+            }]
+        }
+    },
+    series: [
+        {
+            name: 'Objets trouvés ',
+            colorByPoint: true,
+            data:{{piecharts | tojson}}
+        }
+    ]
+});
+
+</script>
+
+<script type="text/javascript">
+  // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
+Highcharts.chart('lineChartSymbols', {
+    chart: {
+        type: 'spline'
+    },
+    title:{
+        text: ""
+    },
+    subtitle: {
+        text: 'Source: ' +
+            '<a href="https://ressources.data.sncf.com/explore/dataset/objets-trouves-restitution/table/?sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJjb2xvciI6InJhbmdlLWN1c3RvbSIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlfV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIiwic2VyaWVzQnJlYWtkb3duIjoiZ2Nfb2JvX3R5cGVfYyIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6Im1vbnRoIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoib2JqZXRzLXRyb3V2ZXMtcmVzdGl0dXRpb24iLCJvcHRpb25zIjp7InNvcnQiOiJkYXRlIn19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9" ' +
+            'target="_blank">SNCF Data</a>'
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        accessibility: {
+            description: 'Months of the year'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Nombre d\'Objets'
+        },
+        labels: {
+            format: '{value}'
+        }
+    },
+    tooltip: {
+        crosshairs: true,
+        shared: true
+    },
+    plotOptions: {
+        spline: {
+            marker: {
+                radius: 4,
+                lineColor: '#666666',
+                lineWidth: 1
+            }
+        }
+    },
+    series: [{
+        name: 'Objets restitués',
+        marker: {
+            symbol: 'square'
+        },
+        //data: [5.2, 5.7, 8.7, 13.9, 18.2, 21.4, 25.0,26.4, 22.8, 17.5, 12.1, 7.6]
+        data:{{labelArea| tojson}}
+    }, {
+        name: 'Objets non restitués',
+        marker: {
+            symbol: 'diamond'
+        },
+        //data: [1.5,1.6, 3.3, 5.9, 10.5, 13.5, 14.5, 14.4, 11.5, 8.7, 4.7, 2.6]
+        data:{{labelAreaNotRestored|tojson}}
+    }]
+});
+
+</script>
+
+<script type="text/javascript">
+Highcharts.chart('bubbleChart',{
+    chart: {
+        type: 'bubble',
+        plotBorderWidth: 1,
+        zoomType: 'xy'
+    },
+    legend: {
+        enabled: false
+    },
+    title: {
+        text: 'Sugar and fat intake per country'
+    },
+    subtitle: {
+        text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
+    },
+    accessibility: {
+        point: {
+            valueDescriptionFormat: '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}g, obesity: {point.z}%.'
+        }
+    },
+
+    xAxis: {
+        gridLineWidth: 1,
+        title: {
+            text: 'Daily fat intake'
+        },
+        labels: {
+            format: '{value} gr'
+        },
+        plotLines: [{
+            color: 'black',
+            dashStyle: 'dot',
+            width: 2,
+            value: 65,
+            label: {
+                rotation: 0,
+                y: 15,
+                style: {
+                    fontStyle: 'italic'
+                },
+                text: 'Safe fat intake 65g/day'
+            },
+            zIndex: 3
+        }],
+        accessibility: {
+            rangeDescription: 'Range: 60 to 100 grams.'
+        }
+    },
+
+    yAxis: {
+        startOnTick: false,
+        endOnTick: false,
+        title: {
+            text: 'Daily sugar intake'
+        },
+        labels: {
+            format: '{value} gr'
+        },
+        maxPadding: 0.2,
+        plotLines: [{
+            color: 'black',
+            dashStyle: 'dot',
+            width: 2,
+            value: 50,
+            label: {
+                align: 'right',
+                style: {
+                    fontStyle: 'italic'
+                },
+                text: 'Safe sugar intake 50g/day',
+                x: -10
+            },
+            zIndex: 3
+        }],
+        accessibility: {
+            rangeDescription: 'Range: 0 to 160 grams.'
+        }
+    },
+
+    tooltip: {
+        useHTML: true,
+        headerFormat: '<table>',
+        pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
+            '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
+            '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
+            '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
+        footerFormat: '</table>',
+        followPointer: true
+    },
+
+    plotOptions: {
+        series: {
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            }
+        }
+    },
+
+    series: [{
+        data: [
+            { x: 95, y: 95, z: 13.8, name: 'BE', country: 'Belgium' },
+            { x: 86.5, y: 102.9, z: 14.7, name: 'DE', country: 'Germany' },
+            { x: 80.8, y: 91.5, z: 15.8, name: 'FI', country: 'Finland' },
+            { x: 80.4, y: 102.5, z: 12, name: 'NL', country: 'Netherlands' },
+            { x: 80.3, y: 86.1, z: 11.8, name: 'SE', country: 'Sweden' },
+            { x: 78.4, y: 70.1, z: 16.6, name: 'ES', country: 'Spain' },
+            { x: 74.2, y: 68.5, z: 14.5, name: 'FR', country: 'France' },
+            { x: 73.5, y: 83.1, z: 10, name: 'NO', country: 'Norway' },
+            { x: 71, y: 93.2, z: 24.7, name: 'UK', country: 'United Kingdom' },
+            { x: 69.2, y: 57.6, z: 10.4, name: 'IT', country: 'Italy' },
+            { x: 68.6, y: 20, z: 16, name: 'RU', country: 'Russia' },
+            { x: 65.5, y: 126.4, z: 35.3, name: 'US', country: 'United States' },
+            { x: 65.4, y: 50.8, z: 28.5, name: 'HU', country: 'Hungary' },
+            { x: 63.4, y: 51.8, z: 15.4, name: 'PT', country: 'Portugal' },
+            { x: 64, y: 82.9, z: 31.3, name: 'NZ', country: 'New Zealand' }
+        ],
+        colorByPoint: true
+    }]
+});
+</script>
+</body>
 </html>
