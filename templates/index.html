@@ -23,16 +23,16 @@
         <div class="sidebar-brand-icon">
           <img src="img/logo/logo2.png">
         </div>
-        <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+        <div class="sidebar-brand-text mx-3"></div>
       </a>
       <hr class="sidebar-divider my-0">
-      <li class="nav-item active">
+      <!--li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
-      </li>
+      </li-->
       <hr class="sidebar-divider">
-      <div class="sidebar-heading">
+      <!--div class="sidebar-heading">
         Features
       </div>
       <li class="nav-item">
@@ -114,7 +114,7 @@
         </a>
       </li>
       <hr class="sidebar-divider">
-      <div class="version" id="version-ruangadmin"></div>
+      <div class="version" id="version-ruangadmin"></div-->
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -411,10 +411,10 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Objets retrouvés</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">{{total}}</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
+                      <!--div class="mt-2 mb-0 text-muted text-xs">
                         <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
                         <span>Since last month</span>
-                      </div>
+                      </div-->
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-list fa-2x text-primary"></i>
@@ -431,10 +431,10 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Objets rendus</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">{{returned}}</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
+                      <!--div class="mt-2 mb-0 text-muted text-xs">
                         <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
                         <span>Since last years</span>
-                      </div>
+                      </div-->
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-upload fa-2x text-success"></i>
@@ -451,10 +451,10 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Objets non rendus</div>
                       <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{notReturned}}</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
+                      <!--div class="mt-2 mb-0 text-muted text-xs">
                         <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
                         <span>Since last month</span>
-                      </div>
+                      </div-->
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-times fa-2x text-info"></i>
@@ -483,12 +483,11 @@
                 </div>
               </div>
             </div-->
-
             <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-7">
+            <!--div class="col-xl-12 col-lg-7">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Statistiques annuelles objets perdus / restitués (2023)</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Statistiques mensuelles objets restitués / non restitués (2023)</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false">
@@ -509,17 +508,16 @@
                     <figure class="highcharts-figure">
                       <div id="lineChartSymbols"></div>
                     </figure>
-
                   </div>
                 </div>
               </div>
-            </div>
+            </div-->
 
-            <div class="col-xl-6 col-lg-7">
+            <div class="col-xl-12 col-lg-7">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Statistiques annuelles</h6>
-                  <div class="dropdown no-arrow">
+                  <h6 class="m-0 font-weight-bold text-primary">Top 10 des objets retrouvés par région </h6>
+                  <!--div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -532,7 +530,7 @@
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                  </div>
+                  </div-->
                 </div>
                 <div class="card-body">
                   <div class="chart-area" style="height: 28rem;">
@@ -545,10 +543,10 @@
             </div>
 
             <!-- Pie Chart -->
-            <div class="col-xl-6 col-lg-5">
+            <div class="col-xl-12 col-lg-5">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Top cinq objets retrouvés</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Objets retrouvés entre 2013 et 2023</h6>
                   <div class="dropdown no-arrow">
                   </div>
                 </div>
@@ -561,10 +559,9 @@
             </div>
           </div>
           <!--Row-->
-
                     <div class="row">
             <!-- Area Charts -->
-            <div class="col-lg-12">
+            <!--div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
@@ -578,32 +575,24 @@
                   <code>/js/demo/chart-area-demo.js</code> file.
                 </div>
               </div>
-            </div>
+            </div-->
             <!-- Bar Chart -->
-            <div class="col-lg-8">
+            <div class="col-lg-12">
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Objets restitués / non restitués par departement entre 2013 et 2023</h6>
                 </div>
                 <div class="card-body">
                   <div class="chart-bar" style="height: 30rem">
                     <figure class="highcharts-figure">
     <div id="bubbleChart"></div>
-    <p class="highcharts-description">
-        Chart showing basic use of bubble series with a custom tooltip formatter.
-        The chart uses plot lines to show safe intake levels for sugar and fat.
-        Bubble charts are great for comparing three dimensions of data without
-        relying on color or 3D charts.
-    </p>
 </figure>
                   </div>
-                  <hr>
-                  Styling for the bar chart can be found in the <code>/js/demo/chart-bar-demo.js</code> file.
                 </div>
               </div>
             </div>
             <!-- Donut Chart -->
-            <div class="col-lg-4">
+            <!--div class="col-lg-12">
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
@@ -616,7 +605,7 @@
                   Styling for the donut chart can be found in the <code>/js/demo/chart-pie-demo.js</code> file.
                 </div>
               </div>
-            </div>
+            </div-->
           </div>
           <!--div class="row">
             <div class="col-lg-12 text-center">
@@ -651,7 +640,7 @@
       </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
+        <!--div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
               <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
@@ -665,7 +654,7 @@
               <b><a href="https://themewagon.com/" target="_blank">themewagon</a></b>
             </span>
           </div>
-        </div>
+        </div-->
       </footer>
       <!-- Footer -->
     </div>
@@ -885,17 +874,15 @@ Highcharts.chart('container', {
         type: 'column'
     },
     title: {
-        text: 'Corn vs wheat estimated production for 2020',
-        align: 'left'
+        text: '',
+        //align: 'left'
     },
     subtitle: {
-        text:
-            'Source: <a target="_blank" ' +
-            'href="https://www.indexmundi.com/agriculture/?commodity=corn">indexmundi</a>',
-        align: 'left'
+        text:'Source:<a href="https://ressources.data.sncf.com/explore/dataset/objets-trouves-restitution/table/?sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJjb2xvciI6InJhbmdlLWN1c3RvbSIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlfV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIiwic2VyaWVzQnJlYWtkb3duIjoiZ2Nfb2JvX3R5cGVfYyIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6Im1vbnRoIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoib2JqZXRzLXRyb3V2ZXMtcmVzdGl0dXRpb24iLCJvcHRpb25zIjp7InNvcnQiOiJkYXRlIn19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9" target="_default">SNCF</a>'
     },
     xAxis: {
-        categories: ['USA', 'China', 'Brazil', 'EU', 'India', 'Russia'],
+        //categories: ['USA', 'China', 'Brazil', 'EU', 'India', 'Russia'],
+        categories:{{tCategories | tojson}},
         crosshair: true,
         accessibility: {
             description: 'Countries'
@@ -904,11 +891,11 @@ Highcharts.chart('container', {
     yAxis: {
         min: 0,
         title: {
-            text: '1000 metric tons (MT)'
+            text: 'Objets retrouvés'
         }
     },
     tooltip: {
-        valueSuffix: ' (1000 MT)'
+        valueSuffix: ''
     },
     plotOptions: {
         column: {
@@ -918,12 +905,9 @@ Highcharts.chart('container', {
     },
     series: [
         {
-            name: 'Corn',
-            data: [406292, 260000, 107000, 68300, 27500, 14500]
-        },
-        {
-            name: 'Wheat',
-            data: [51086, 136000, 5500, 141000, 107180, 77000]
+            name: 'Objets retrouvés',
+            //data: [51086, 136000, 5500, 141000, 107180, 77000]
+            data:{{tSeries | tojson}}
         }
     ]
 });
@@ -935,14 +919,13 @@ Highcharts.chart('container', {
         type: 'pie'
     },
     title: {
-        text: 'Proportion Objets trouvés entre 2013 et 2023'
+        text: ''
     },
     tooltip: {
         valueSuffix: ''
     },
     subtitle: {
-        text:
-        'Source:<a href="https://ressources.data.sncf.com/explore/dataset/objets-trouves-restitution/table/?sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJjb2xvciI6InJhbmdlLWN1c3RvbSIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlfV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIiwic2VyaWVzQnJlYWtkb3duIjoiZ2Nfb2JvX3R5cGVfYyIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6Im1vbnRoIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoib2JqZXRzLXRyb3V2ZXMtcmVzdGl0dXRpb24iLCJvcHRpb25zIjp7InNvcnQiOiJkYXRlIn19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9" target="_default">SNCF</a>'
+        text:'Source:<a href="https://ressources.data.sncf.com/explore/dataset/objets-trouves-restitution/table/?sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJjb2xvciI6InJhbmdlLWN1c3RvbSIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlfV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIiwic2VyaWVzQnJlYWtkb3duIjoiZ2Nfb2JvX3R5cGVfYyIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6Im1vbnRoIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoib2JqZXRzLXRyb3V2ZXMtcmVzdGl0dXRpb24iLCJvcHRpb25zIjp7InNvcnQiOiJkYXRlIn19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9" target="_default">SNCF</a>'
     },
     plotOptions: {
         pie: {
@@ -993,9 +976,7 @@ Highcharts.chart('lineChartSymbols', {
         text: ""
     },
     subtitle: {
-        text: 'Source: ' +
-            '<a href="https://ressources.data.sncf.com/explore/dataset/objets-trouves-restitution/table/?sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJjb2xvciI6InJhbmdlLWN1c3RvbSIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlfV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIiwic2VyaWVzQnJlYWtkb3duIjoiZ2Nfb2JvX3R5cGVfYyIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6Im1vbnRoIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoib2JqZXRzLXRyb3V2ZXMtcmVzdGl0dXRpb24iLCJvcHRpb25zIjp7InNvcnQiOiJkYXRlIn19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9" ' +
-            'target="_blank">SNCF Data</a>'
+        text: 'Source: ' +'<a href="https://ressources.data.sncf.com/explore/dataset/objets-trouves-restitution/table/?sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJjb2xvciI6InJhbmdlLWN1c3RvbSIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlfV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIiwic2VyaWVzQnJlYWtkb3duIjoiZ2Nfb2JvX3R5cGVfYyIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6Im1vbnRoIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoib2JqZXRzLXRyb3V2ZXMtcmVzdGl0dXRpb24iLCJvcHRpb25zIjp7InNvcnQiOiJkYXRlIn19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9" ' +'target="_blank">SNCF Data</a>'
     },
     xAxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -1005,7 +986,7 @@ Highcharts.chart('lineChartSymbols', {
     },
     yAxis: {
         title: {
-            text: 'Nombre d\'Objets'
+            text: 'Nombre d\'Objets restitués /non restitués'
         },
         labels: {
             format: '{value}'
@@ -1054,26 +1035,26 @@ Highcharts.chart('bubbleChart',{
         enabled: false
     },
     title: {
-        text: 'Sugar and fat intake per country'
+        text: ''
     },
     subtitle: {
-        text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
+        text: 'Source: ' +'<a href="https://ressources.data.sncf.com/explore/dataset/objets-trouves-restitution/table/?sort=date&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJjb2xvciI6InJhbmdlLWN1c3RvbSIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlfV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIiwic2VyaWVzQnJlYWtkb3duIjoiZ2Nfb2JvX3R5cGVfYyIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6Im1vbnRoIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoib2JqZXRzLXRyb3V2ZXMtcmVzdGl0dXRpb24iLCJvcHRpb25zIjp7InNvcnQiOiJkYXRlIn19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9" ' +'target="_blank">SNCF Data</a>'
     },
     accessibility: {
         point: {
-            valueDescriptionFormat: '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}g, obesity: {point.z}%.'
+            valueDescriptionFormat: '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}.'
         }
     },
 
     xAxis: {
         gridLineWidth: 1,
         title: {
-            text: 'Daily fat intake'
+            text: 'Objets restitués / non restitués par Département entre 2013 et 2023'
         },
         labels: {
-            format: '{value} gr'
+            format: '{value}'
         },
-        plotLines: [{
+        /*plotLines: [{
             color: 'black',
             dashStyle: 'dot',
             width: 2,
@@ -1087,7 +1068,7 @@ Highcharts.chart('bubbleChart',{
                 text: 'Safe fat intake 65g/day'
             },
             zIndex: 3
-        }],
+        }],*/
         accessibility: {
             rangeDescription: 'Range: 60 to 100 grams.'
         }
@@ -1097,13 +1078,13 @@ Highcharts.chart('bubbleChart',{
         startOnTick: false,
         endOnTick: false,
         title: {
-            text: 'Daily sugar intake'
+            text: 'Objets restitués / non restitués'
         },
         labels: {
-            format: '{value} gr'
+            format: '{value}'
         },
         maxPadding: 0.2,
-        plotLines: [{
+        /*plotLines: [{
             color: 'black',
             dashStyle: 'dot',
             width: 2,
@@ -1113,11 +1094,11 @@ Highcharts.chart('bubbleChart',{
                 style: {
                     fontStyle: 'italic'
                 },
-                text: 'Safe sugar intake 50g/day',
+                text: 'Safe sugar intake 50g/da',
                 x: -10
             },
             zIndex: 3
-        }],
+        }],*/
         accessibility: {
             rangeDescription: 'Range: 0 to 160 grams.'
         }
@@ -1127,9 +1108,8 @@ Highcharts.chart('bubbleChart',{
         useHTML: true,
         headerFormat: '<table>',
         pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
-            '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
-            '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
-            '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
+            '<tr><th>Objets restitués:</th><td>{point.x}</td></tr>' +
+            '<tr><th>Objets non restitués:</th><td>{point.y}</td></tr>',
         footerFormat: '</table>',
         followPointer: true
     },
@@ -1144,11 +1124,12 @@ Highcharts.chart('bubbleChart',{
     },
 
     series: [{
-        data: [
+      data:{{bubbleChart | tojson}},
+        /*data: [
             { x: 95, y: 95, z: 13.8, name: 'BE', country: 'Belgium' },
             { x: 86.5, y: 102.9, z: 14.7, name: 'DE', country: 'Germany' },
             { x: 80.8, y: 91.5, z: 15.8, name: 'FI', country: 'Finland' },
-            { x: 80.4, y: 102.5, z: 12, name: 'NL', country: 'Netherlands' },
+            { x: 80.4, y: 102.5, z: 12, name: 'NLSLTEDF', country: 'Netherlands' },
             { x: 80.3, y: 86.1, z: 11.8, name: 'SE', country: 'Sweden' },
             { x: 78.4, y: 70.1, z: 16.6, name: 'ES', country: 'Spain' },
             { x: 74.2, y: 68.5, z: 14.5, name: 'FR', country: 'France' },
@@ -1160,7 +1141,7 @@ Highcharts.chart('bubbleChart',{
             { x: 65.4, y: 50.8, z: 28.5, name: 'HU', country: 'Hungary' },
             { x: 63.4, y: 51.8, z: 15.4, name: 'PT', country: 'Portugal' },
             { x: 64, y: 82.9, z: 31.3, name: 'NZ', country: 'New Zealand' }
-        ],
+        ],*/
         colorByPoint: true
     }]
 });

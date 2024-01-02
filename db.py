@@ -106,10 +106,35 @@ def selectStatObjectsFoundedByYear():
     return pieCharts
 
 #Total des objets restitués
-def selectTopFiveObjectsFoundForCurrentYear():
+def selectTopTenObjectsFoundForCurrentYear():
     currentResults=[]
-    conn=psycopg2.connect("")
+    conn=psycopg2.connect("dbname=projet-sncf user=postgres host=localhost password=1234")
     query=conn.cursor()
-    query.execute("SELECT nature_objets, count(nature_objets) FROM sncf WHERE EXTRACT(YEAR FROM date::date)=2023 group by nature_objets order by count(nature_objets) DESC LIMIT 5; ")
+    query.execute("SELECT region_sncf,COUNT(*) as total FROM sncf WHERE EXTRACT(YEAR from date::date)=2023 GROUP BY region_sncf ORDER BY total DESC LIMIT 10")
+    res=query.fetchall()
 
-selectStatObjectsFoundByType()
+    for i in range(0,len(res)):
+        currentResults.append({'region':res[i][0],'total':res[i][1]})
+    
+    return currentResults
+
+def selectObjectFoundByDepartement():
+    results=[]
+    #x: Objets restitues
+    #y: Objets non restitués
+    conn=psycopg2.connect("dbname=projet-sncf user=postgres host=localhost password=1234")
+    query=conn.cursor()
+    query.execute("SELECT departement,count(case when date_resti!='1970-01-01' then date_resti end) as resti, count(case when date_resti='1970-01-01' then date_resti end) as non_restitue FROM public.sncf group by departement;")
+    res=query.fetchall()
+
+    for i in range(0,len(res)):
+        results.append({
+            'x':res[i][1],
+            'y':res[i][2],
+            'name':res[i][0][0:3],
+            'country':res[i][0]
+        })
+    #print(results)
+    return results
+
+selectObjectFoundByDepartement()
